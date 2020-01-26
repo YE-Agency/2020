@@ -1,0 +1,92 @@
+@import "../fonts/stylesheet.css";
+
+html, body, div, canvas {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  font-family: "Noto Sans SC", Serif, sans-serif;
+  overflow: hidden;
+}
+
+
+body, .screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+#app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 750px;
+  max-height: 750px;
+}
+
+canvas, .screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 19;
+}
+
+.screen {
+  text-align: center;
+  color: #8b8b8b;
+  line-height: 2;
+  z-index: 10;
+
+  > p {
+	display: block;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: visible;
+	transition: opacity .3s;
+  }
+}
+
+.game-loading {
+  .loading {
+    width: auto;
+    height: auto;
+	opacity: 1;
+  }
+}
+
+.game-ready {
+  .loading {
+    width: auto;
+    height: auto;
+	opacity: 0;
+  }
+}
+
+.game-waiting {
+  .loading {
+    width: 0;
+    height: 0;
+  }
+  .help {
+    width: auto;
+    height: auto;
+	opacity: 1;
+  }
+}
+
+.game-running {
+  .loading {
+    width: 0;
+    height: 0;
+  }
+  .help {
+    width: auto;
+    height: auto;
+	opacity: 0;
+  }
+}
